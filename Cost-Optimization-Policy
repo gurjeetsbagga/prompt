@@ -1,0 +1,456 @@
+# AI Usage Governance & Cost Optimization Policy
+
+## For Cursor, ChatGPT, Claude, Codex & AI Engineering Workflows
+
+Version: 1.0
+Owner: Engineering / Founder
+Objective: Reduce unnecessary AI spend while maximizing engineering productivity, output quality, and delivery speed.
+
+---
+
+# 1. Governance Philosophy
+
+AI models are productivity accelerators, not unlimited compute resources.
+
+The objective of this governance policy is to:
+
+* Reduce unnecessary token consumption
+* Prevent repeated expensive generations
+* Use the correct model for the correct task
+* Improve prompt quality and engineering discipline
+* Introduce operational cost awareness
+* Scale AI-assisted engineering sustainably
+
+Core Principle:
+
+> Use expensive reasoning only when high-value reasoning is required.
+
+---
+
+# 2. Primary Cost Drivers
+
+The largest causes of AI spend are:
+
+* Massive prompt context windows
+* Re-generating entire documents repeatedly
+* Using premium models for simple tasks
+* Multi-agent orchestration loops
+* Repeated retries without refinement
+* Long architectural discussions
+* Uploading large files unnecessarily
+* Lack of caching/reuse
+* Poor prompt specificity
+* Infinite refinement loops
+
+---
+
+# 3. Approved AI Tool Usage Strategy
+
+## 3.1 Model Allocation Policy
+
+### LOW-COST MODELS (Default)
+
+Use for:
+
+* Formatting
+* CRUD code generation
+* Refactoring
+* Documentation cleanup
+* Summaries
+* UI boilerplate
+* Sprint task generation
+* Markdown formatting
+* Regex/simple scripts
+
+Examples:
+
+* GPT-4o-mini
+* Claude Haiku
+* Gemini Flash
+
+Rule:
+
+> Default to low-cost models unless advanced reasoning is required.
+
+---
+
+### MID-TIER MODELS
+
+Use for:
+
+* Backend implementation
+* API design
+* Medium complexity debugging
+* Workflow orchestration
+* Refined technical writing
+* Prompt engineering
+
+Examples:
+
+* GPT-4.1
+* Claude Sonnet
+
+Rule:
+
+> Use only after low-cost model limitations are identified.
+
+---
+
+### PREMIUM MODELS
+
+Use ONLY for:
+
+* Architecture decisions
+* Complex reasoning
+* Multi-system design
+* AI orchestration strategy
+* Critical debugging
+* Security analysis
+* Final design reviews
+* High-value product decisions
+
+Examples:
+
+* GPT-5.5
+* Claude Opus
+
+Rule:
+
+> Premium reasoning must not be used for repetitive engineering tasks.
+
+---
+
+# 4. Prompt Governance Rules
+
+## 4.1 Never Regenerate Entire Documents
+
+BAD:
+
+* Rewrite whole PRD
+* Regenerate complete architecture
+* Recreate full sprint plan
+
+GOOD:
+
+* Update section 3 only
+* Refactor API section only
+* Modify authentication workflow only
+
+Expected Savings:
+50–80%
+
+---
+
+## 4.2 Context Minimization
+
+Only provide:
+
+* Relevant files
+* Relevant logs
+* Relevant code blocks
+
+Avoid:
+
+* Entire repositories
+* Full architecture dumps
+* Unrelated backlog data
+
+Rule:
+
+> Every unnecessary token is paid for repeatedly.
+
+---
+
+## 4.3 Prompt Precision
+
+BAD:
+“Fix everything.”
+
+GOOD:
+“Fix hydration mismatch in login page caused by server/client rendering inconsistency.”
+
+Expected Savings:
+
+* Faster convergence
+* Fewer retries
+* Lower token usage
+
+---
+
+## 4.4 Limit Iterative Loops
+
+Maximum:
+
+* 3 iterations per problem before reframing prompt
+
+If issue persists:
+
+* Simplify
+* Isolate root cause
+* Reduce context
+* Change model
+
+---
+
+# 5. Cursor Governance Policy
+
+## Allowed Use Cases
+
+* Local code refactoring
+* File-aware implementation
+* Component scaffolding
+* Type fixes
+* Unit test generation
+* Small feature implementation
+
+## Restricted Use Cases
+
+Avoid Cursor for:
+
+* Massive architecture generation
+* Full monorepo redesign
+* Large business documents
+* Multi-hour agent loops
+
+---
+
+## Cursor Cost Controls
+
+* Disable unnecessary indexing
+* Avoid full workspace context when possible
+* Open only required files
+* Use targeted prompts
+* Avoid repeated “fix all” requests
+
+---
+
+# 6. ChatGPT Governance Policy
+
+## Use ChatGPT For
+
+* Product thinking
+* Architecture review
+* Technical reasoning
+* AI workflows
+* Governance planning
+* Complex debugging
+* Strategic decisions
+
+---
+
+## Avoid Using ChatGPT For
+
+* Simple CSS fixes
+* CRUD generation
+* Repetitive code updates
+* Rewriting same document repeatedly
+
+---
+
+## Context Rules
+
+Before uploading:
+Ask:
+
+1. Does the model really need this file?
+2. Can I summarize instead?
+3. Can I isolate the section?
+
+---
+
+# 7. Claude Governance Policy
+
+## Use Claude For
+
+* Long-form reasoning
+* Architecture documents
+* Deep technical analysis
+* Multi-step workflow design
+* Large context synthesis
+
+---
+
+## Avoid
+
+* Repeated iterative edits
+* Small UI fixes
+* Short coding tasks
+* Repetitive formatting work
+
+---
+
+## Claude Cost Protection
+
+* Do not repeatedly paste large documents
+* Use delta-updates only
+* Avoid “rewrite entire document” prompts
+* Split documents into sections
+
+---
+
+# 8. Codex / Agent Governance
+
+## Critical Rule
+
+Every agent loop multiplies cost.
+
+Example:
+1 request →
+
+* planner
+* coder
+* reviewer
+* evaluator
+* summarizer
+* verifier
+
+Can become:
+10–30 LLM calls.
+
+---
+
+## Agent Limits
+
+### Hard Limits
+
+* Max retries per task: 2
+* Max autonomous loops: 3
+* Max context size per agent: minimal viable context
+* Human approval required before major regeneration
+
+---
+
+## Human-in-the-Loop Requirement
+
+Agents must pause before:
+
+* Large code rewrites
+* Architecture rewrites
+* Mass refactors
+* Expensive retries
+
+---
+
+# 9. AI Cost Budgeting
+
+## Weekly AI Budget
+
+Define:
+
+* Architecture budget
+* Coding budget
+* Experimentation budget
+* Research budget
+
+Example:
+
+| Category     | Weekly Limit |
+| ------------ | ------------ |
+| Architecture | $20          |
+| Coding       | $15          |
+| Research     | $10          |
+| Experiments  | $10          |
+
+---
+
+# 10. Caching & Reuse Policy
+
+Always reuse:
+
+* PRDs
+* prompt templates
+* architecture decisions
+* API standards
+* coding guidelines
+* sprint structures
+
+Never regenerate existing reusable assets unnecessarily.
+
+---
+
+# 11. Engineering Workflow Optimization
+
+## Recommended Workflow
+
+### Phase 1 — Cheap Model
+
+* brainstorm
+* outline
+* generate draft
+
+### Phase 2 — Mid-Tier
+
+* refine
+* implement
+* debug
+
+### Phase 3 — Premium
+
+* validate architecture
+* final review
+* critical reasoning
+
+---
+
+# 12. Token Efficiency Guidelines
+
+## Prefer
+
+* bullet points
+* targeted prompts
+* concise logs
+* isolated errors
+
+## Avoid
+
+* giant chat histories
+* repeated context
+* duplicated requirements
+* broad open-ended prompts
+
+---
+
+# 13. AI Operational Discipline
+
+Engineers should:
+
+* think before prompting
+* isolate problems first
+* reduce ambiguity
+* avoid emotional retry loops
+* stop unnecessary regeneration
+
+---
+
+# 14. Founder Governance Rules
+
+Founder must:
+
+* approve expensive AI workflows
+* monitor weekly spend
+* review recurring high-cost patterns
+* identify low-value AI usage
+* enforce prompt quality standards
+
+---
+
+# 15. Success Metrics
+
+Target Outcomes:
+
+* 50–70% reduction in unnecessary AI spend
+* Faster engineering convergence
+* Higher-quality prompts
+* Reduced retry loops
+* Better engineering discipline
+* Sustainable AI-assisted development
+
+---
+
+# 16. Final Principle
+
+AI cost optimization is not about using less AI.
+
+It is about:
+
+> Using the right intelligence at the right time for the right problem.

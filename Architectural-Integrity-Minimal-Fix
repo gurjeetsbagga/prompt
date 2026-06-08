@@ -1,0 +1,249 @@
+# 17. Architectural Integrity & Minimal-Fix Governance
+
+## Problem Statement
+
+AI coding agents frequently introduce unnecessary “safe fixes” that solve symptoms instead of root causes.
+
+Common issues include:
+
+* Overengineering
+* Unnecessary abstraction layers
+* Wrapper proliferation
+* Duplicate utility creation
+* Architecture drift
+* Hidden side effects
+* SOLID violations
+* YAGNI violations
+* KISS violations
+* Large unrelated refactors
+* “Fix-all” modifications
+* Defensive code expansion
+
+These behaviors increase:
+
+* maintenance cost
+* debugging complexity
+* token consumption
+* regression risk
+* architectural inconsistency
+
+---
+
+# 18. Root Cause First Policy
+
+AI agents must prioritize:
+
+1. Root cause identification
+2. Minimal targeted fix
+3. Existing architecture reuse
+4. Smallest possible code delta
+
+Rule:
+
+> Never redesign architecture to fix a localized issue.
+
+---
+
+# 19. Minimal Change Principle
+
+AI-generated fixes must:
+
+* modify the fewest files possible
+* preserve existing architecture
+* avoid unrelated refactors
+* avoid creating new abstractions unless required
+* avoid introducing new services/classes/hooks/helpers without justification
+
+Preferred:
+
+* targeted fixes
+* localized changes
+* architecture-preserving updates
+
+---
+
+# 20. SOLID / KISS / YAGNI Enforcement
+
+Every AI-generated change must pass:
+
+## SOLID
+
+* Single Responsibility
+* Open/Closed
+* Liskov Substitution
+* Interface Segregation
+* Dependency Inversion
+
+## KISS
+
+* Keep implementation simple
+* Avoid unnecessary patterns
+
+## YAGNI
+
+* Do not build speculative solutions
+* Do not add future-proof abstractions without actual need
+
+Rule:
+
+> Future hypothetical scalability is NOT justification for architectural expansion.
+
+---
+
+# 21. No Hidden Refactor Rule
+
+AI agents must NOT:
+
+* rename unrelated files
+* move folders unnecessarily
+* rewrite stable modules
+* change architecture patterns
+* alter naming conventions
+* introduce framework migrations
+
+Unless explicitly requested.
+
+---
+
+# 22. Existing Pattern Reuse Policy
+
+Before creating:
+
+* utility
+* hook
+* service
+* helper
+* component
+* abstraction
+
+AI must first:
+
+1. search existing codebase
+2. reuse established patterns
+3. extend existing modules if appropriate
+
+Rule:
+
+> Duplication caused by AI-generated parallel abstractions is prohibited.
+
+---
+
+# 23. Error Resolution Workflow
+
+Before implementing any fix:
+
+## Step 1 — Reproduce
+
+* understand actual error
+* isolate root cause
+
+## Step 2 — Analyze Scope
+
+* determine affected boundaries
+* avoid broad impact
+
+## Step 3 — Check Existing Architecture
+
+* identify reusable patterns
+* avoid duplicate logic
+
+## Step 4 — Apply Minimal Fix
+
+* smallest viable correction
+
+## Step 5 — Validate
+
+* ensure no regression
+* verify architecture consistency
+
+---
+
+# 24. Forbidden AI Behaviors
+
+AI agents are prohibited from:
+
+* “fixing everything”
+* speculative refactoring
+* introducing unnecessary generic abstractions
+* rewriting stable modules
+* creating duplicate services/hooks/helpers
+* adding fallback chains without reason
+* adding defensive complexity for low-risk scenarios
+* implementing architecture redesign for local bugs
+
+---
+
+# 25. Human Approval Gates
+
+Human review required before:
+
+* folder restructuring
+* dependency changes
+* framework upgrades
+* architecture changes
+* abstraction introduction
+* service extraction
+* large-scale refactors
+* state management rewrites
+
+---
+
+# 26. Architecture Preservation Principle
+
+The existing architecture is the default source of truth.
+
+AI agents must:
+
+* preserve conventions
+* preserve boundaries
+* preserve module ownership
+* preserve dependency flow
+* preserve coding standards
+
+Rule:
+
+> Consistency is more valuable than theoretical perfection.
+
+---
+
+# 27. Preferred Engineering Philosophy
+
+Preferred:
+
+* pragmatic engineering
+* maintainable code
+* readable code
+* small targeted fixes
+* iterative improvements
+
+Avoid:
+
+* academic architecture
+* abstraction obsession
+* enterprise overengineering
+* speculative scalability
+
+---
+
+# 28. AI Agent Success Criteria
+
+A successful AI-generated fix:
+
+✓ fixes root cause
+✓ minimizes code changes
+✓ preserves architecture
+✓ follows existing patterns
+✓ avoids regressions
+✓ maintains SOLID/KISS/YAGNI
+✓ avoids unnecessary abstractions
+✓ remains understandable by humans
+
+---
+
+# 29. Core Governance Principle
+
+AI agents are assistants to engineering judgment — not autonomous architects.
+
+Rule:
+
+> The best fix is usually the smallest correct fix.
